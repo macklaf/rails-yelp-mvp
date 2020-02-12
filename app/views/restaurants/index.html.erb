@@ -1,0 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1552526881-721ce8509abb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1301&q=80);">
+  <div class="container">
+    <h1> Restaurants <strong>Good food</strong> to <strong>Good people</strong>!</h1>
+    <p>Get de best restaurant and the best food around you with the best ratings.</p>
+    <a class="btn btn-flat" href="#"></a>
+  </div>
+</div>
+
+<div class="container">
+<ul>
+<% @restaurants.each do |restaurant| %>
+<div class="card-product mt-5">
+  <img src="https://images.unsplash.com/photo-1580372648129-cb82ef5f1052?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80" />
+  <div class="card-product-infos">
+    <h2><%=link_to restaurant.name , restaurant_path(restaurant) %></h2>
+    <p><strong><%= restaurant.address %></strong></p>
+  </div>
+</div>
+<% end %>
+</ul>
+
+<%= link_to "add a new restaurant", new_restaurant_path %>
+
+</div>
